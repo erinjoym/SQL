@@ -1,0 +1,29 @@
+CREATE TABLE inventory (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, local TEXT popularity TEXT );
+
+INSERT INTO inventory VALUES (1, "raw milk", 5, 7.99, "yes", "4");
+INSERT INTO inventory VALUES (2, "elderberry syrup", 3, 10.95, "no", "1");
+INSERT INTO inventory VALUES (3, "vitamin d lotion", 10, 12, "no", "11");
+INSERT INTO inventory VALUES (4, "magnesium lotion", 5, 10, "no", "13");
+INSERT INTO inventory VALUES (5, "kombucha", 20, 4.99, "yes", "7");
+INSERT INTO inventory VALUES (6, "grass fed beef", 5, 19.99, "yes", "3");
+INSERT INTO inventory VALUES (7, "bananas", 30, 0.99, "no", "2");
+INSERT INTO inventory VALUES (8, "collagen powder", 10, 29.99, "no", "14");
+INSERT INTO inventory VALUES (9, "eggs", 12, 3.99, "yes", "5");
+INSERT INTO inventory VALUES (10, "coffee", 30, 10, "yes", "6");
+INSERT INTO inventory VALUES (11, "cold press juice" 10, 8.99, "yes", "8");
+INSERT INTO inventory VALUES (12, "greek yogurt" 5, 5, "no", "10");
+INSERT INTO inventory VALUES (13, "castor oil" 7, 9.99, "no","15");
+INSERT INTO inventory VALUES (14, "raw honey", 10, 15.99, "yes", "9");
+INSERT INTO inventory VALUES (15, "matcha powder" 2, 19.99, "no", "12");
+
+SELECT * FROM inventory;
+
+--display the database ordered by price
+SELECT * FROM inventory ORDER BY price asc;
+
+--how many items are under 10 dollars?
+SELECT * FROM inventory WHERE price <10 ORDER BY price asc;
+
+--what are the 5 most popular items?
+SELECT name, price, popularity FROM inventory ORDER BY popularity desc limit 5;
+
